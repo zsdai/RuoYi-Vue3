@@ -23,7 +23,7 @@
             <el-form-item label="性别" prop="gender">
                 <el-select v-model="queryParams.gender" placeholder="请选择性别" clearable>
                     <el-option
-                            v-for="dict in dict.type.sys_user_sex"
+                            v-for="dict in sys_user_sex"
                             :key="dict.value"
                             :label="dict.label"
                             :value="dict.value"
