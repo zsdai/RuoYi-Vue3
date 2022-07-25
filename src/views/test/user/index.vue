@@ -87,17 +87,17 @@
             <el-table-column label="主键" align="center" prop="id" />
             <el-table-column label="名称" align="center" prop="name" />
             <el-table-column label="年龄" align="center" prop="birth" width="180">
-                <template slot-scope="scope">
+                <template #default="scope">
                     <span>{{ parseTime(scope.row.birth, '{y}-{m}-{d}') }}</span>
                 </template>
             </el-table-column>
             <el-table-column label="性别" align="center" prop="gender">
-                <template slot-scope="scope">
-                    <dict-tag :options="dict.type.sys_user_sex" :value="scope.row.gender"/>
+                <template #default="scope">
+                    <dict-tag :options="sys_user_sex" :value="scope.row.gender"/>
                 </template>
             </el-table-column>
             <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
-                <template slot-scope="scope">
+                <template #default="scope">
                     <el-button
                             size="mini"
                             type="text"
@@ -141,7 +141,7 @@
                 <el-form-item label="性别">
                     <el-radio-group v-model="form.gender">
                         <el-radio
-                                v-for="dict in dict.type.sys_user_sex"
+                                v-for="dict in sys_user_sex"
                                 :key="dict.value"
                                 :label="dict.value"
                         >{{dict.label}}</el-radio>
